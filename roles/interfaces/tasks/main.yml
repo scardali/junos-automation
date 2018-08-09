@@ -1,0 +1,18 @@
+ 
+- name: Show interfaces RPC
+  juniper_junos_rpc: 
+    provider: "{{ credentials }}"
+    rpcs: get-interface-information
+    format: xml
+  register: result
+
+- name: Save to file
+  copy: 
+    content: "{{ result['parsed_output']['interface-information'] }}"
+    dest: build/{{ inventory_hostname }}/interface-information.json
+    
+- name: Get information to table
+  command: python roles/interfaces/scripts/show.py "{{ play_hosts }}" "{{ path }}"
+  run_once: True
+  delegate_to: localhost
+  

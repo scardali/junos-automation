@@ -1,0 +1,9 @@
+[switches]
+ex2300c ansible_host=172.30.36.242
+vQFX00 ansible_host=172.30.36.115
+vQFX01 ansible_host=172.30.36.116
+vQFX02 ansible_host=172.30.36.117
+vQFX03 ansible_host=172.30.36.118
+vQFX04 ansible_host=172.30.36.119
+[routers]
+

@@ -1,0 +1,17 @@
+--- 
+- name: Show System Alarm
+  juniper_junos_rpc:
+    provider: "{{ credentials }}"
+    rpcs: get-system-alarm-information
+    format: xml
+  register: result
+  
+- name: Save to file
+  copy:
+    content: "{{ result['parsed_output']['alarm-information'] }}"
+    dest: build/{{ inventory_hostname }}/alarm_table.json
+
+- name: Get information to table
+  command: python roles/alarm/scripts/show.py "{{ play_hosts }}" "{{ path }}"
+  run_once: true
+  delegate_to: localhost
