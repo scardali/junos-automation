@@ -1,5 +1,5 @@
 --- 
-- name: Set Up Environment
+- name: Run Show Commands
   hosts: all
   roles:
   - Juniper.junos
@@ -11,7 +11,7 @@
       host: "{{ ansible_host }}"
       port: 830
       timeout: 5
-  - name: Make a directory for each host
+  - name: Make a directory for the host
     file: 
       path: build/{{ inventory_hostname }}
       state: directory
@@ -21,17 +21,21 @@
   hosts: all
   connection: local
   roles:
-  - ethernet
   - interfaces
   - alarm
-  - vlans
+- name: Run Switch Show Commands
+  hosts: switches
+  connection: local
+  roles: 
+  - ethernet
   - multicast
   - version
+- name: Run Router Show Commands
+  hosts: all
+  connection: local
+  ignore_errors: yes
+  roles:
   - lacp
-
-
-
-
 
 
 
