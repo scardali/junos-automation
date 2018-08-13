@@ -1,1 +1,1 @@
-sudo docker run --rm -v /home/lab/nginx:/home/lab/nginx -w /home/lab/nginx -it juniper/pyez-ansible ansible-playbook get_show_commands.yml -vvv
+sudo docker run --rm -v /home/lab/nginx:/home/lab/nginx -w /home/lab/nginx -it juniper/pyez-ansible ansible-playbook get_show_commands.yml

@@ -1,5 +1,5 @@
 ---
-- name: Show igmp snooping membership
+- name: Show IGMP Snooping Membership RPC
   juniper_junos_rpc:
     provider: "{{ credentials }}"
     rpcs: get-igmp-snooping-membership-information
@@ -10,7 +10,7 @@
     content: "{{ result['parsed_output']['igmp-snooping-group-information-root']['igmp-snooping-group-information-per-instance']['igmp-snooping-group-information-per-vlan'] }}"
     dest: build/{{ inventory_hostname }}/igmp_snooping_membership.json
 
-- name: Get information to table
+- name: Get information to Web Server
   command: python roles/multicast/scripts/show.py "{{ play_hosts }}" "{{ path }}"
   run_once: true
   delegate_to: localhost

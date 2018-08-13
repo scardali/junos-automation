@@ -43,10 +43,15 @@ def main():
     webdata = {}
     webdata['data'] = []
     for host in all_host_data:
-        hostname = host['hostname']
-        for entry in host['mac-table']:
+        mactable =  []
+        if type(host['mac-table']) == dict:
+            mactable.append(host['mac-table'])
+        else:
+            mactable = host['mac-table']
+
+        for entry in mactable:
             newlist = []
-            newlist.append(hostname)
+            newlist.append(host['hostname'])
             newlist.append(entry['l2ng-l2-mac-vlan-name'])
             """Find the right vlan id for the name"""
             for vlan in vlans:

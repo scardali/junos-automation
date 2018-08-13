@@ -17,22 +17,22 @@ def main():
         try:
             with open(filename,'r') as f:
                 newval['hostname'] = host
-                newval['lag-lacp-protocol'] = json.load(f)
+                newval['interface-information'] = json.load(f)
         except:
             newval['hostname'] = host
-            newval['msg'] = "LACP subsystem is not running - not needed by configuration"
 
         all_host_data.append(newval)
     """LACP Data"""
     webdata = {}
     webdata['data'] = []
-    
     for host in all_host_data:
         hostname = host['hostname']
+        ae = host['interface-information']['lag-lacp-header']['aggregate-name']
         try: 
-            for lacp in host['lag-lacp-protocol']:
+            for lacp in host['interface-information']['lag-lacp-protocol']:
                 newlist = []
                 newlist.append(hostname)
+                newlist.append(ae)
                 newlist.append(lacp['lacp-receive-state'])
                 newlist.append(lacp['name'])
                 newlist.append(lacp['lacp-transmit-state'])
@@ -41,8 +41,8 @@ def main():
         except:
             newlist = []
             newlist.append(hostname)
-            newlist.append(host['msg'])
-            [newlist.append("") for _ in range(0,3)]
+            newlist.append("LACP subsystem is not running - not needed by configuration")
+            [newlist.append("") for _ in range(0,4)]
             webdata['data'].append(newlist)
 
         

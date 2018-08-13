@@ -11,7 +11,7 @@
     content: "{{ result['parsed_output']['interface-information'] }}"
     dest: build/{{ inventory_hostname }}/interface-information.json
     
-- name: Get information to table
+- name: Get information to Web Server
   command: python roles/interfaces/scripts/show.py "{{ play_hosts }}" "{{ path }}"
   run_once: True
   delegate_to: localhost

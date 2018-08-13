@@ -1,5 +1,5 @@
 ---
-- name: get ethernet table json
+- name: Show Ethernet Switching Table RPC
   juniper_junos_rpc:
     provider: "{{ credentials }}"
     rpcs: get-ethernet-switching-table-information
@@ -11,19 +11,7 @@
     content: "{{ result['parsed_output']['l2ng-l2ald-rtb-macdb']['l2ng-l2ald-mac-entry-vlan']['l2ng-mac-entry'] }}"
     dest: build/{{ inventory_hostname }}/ethernet_switching_table.json
 
-- name: Get the vlan ids
-  juniper_junos_rpc: 
-    provider: "{{ credentials }}"
-    rpcs: get-vlan-information
-    format: xml
-  register: result
-
-- name: Save to file
-  copy:
-    content: "{{ result['parsed_output']['l2ng-l2ald-vlan-instance-information']['l2ng-l2ald-vlan-instance-group'] }}"
-    dest: build/{{ inventory_hostname }}/vlan-information.json
-
-- name: Get information to table
+- name: Get information to Web Server
   command: python roles/ethernet/scripts/show.py "{{ play_hosts }}" "{{ path }}"
   run_once: true
   delegate_to: localhost

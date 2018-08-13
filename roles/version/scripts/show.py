@@ -27,10 +27,11 @@ def main():
         newlist = []
         newlist.append(host['hostname'])
         for item in host['package-information']:
-            if item['name'] == 'junos':
+            if item['name'] == 'junos' or item['name'] == 'os-kernel':
                 comment = item['comment'].split('[')
                 comment[1] = comment[1][:-1]
                 newlist.append(comment[1])
+
         webdata['data'].append(newlist)
 
 

@@ -1,5 +1,5 @@
 ---
-- name: Show Version
+- name: Show Version RPC
   juniper_junos_rpc:
     provider: "{{ credentials }}"
     rpcs: get-software-information
@@ -11,7 +11,7 @@
     content: "{{ result['parsed_output']['multi-routing-engine-results']['multi-routing-engine-item']['software-information']['package-information'] }}"
     dest: build/{{ inventory_hostname }}/version_table.json
 
-- name: Get information to table
+- name: Get information to Web Server
   command: python roles/version/scripts/show.py "{{ play_hosts }}" "{{ path }}"
   run_once: true
   delegate_to: localhost
