@@ -12,7 +12,5 @@
     dest: build/{{ inventory_hostname }}/interface-information.json
     
 - name: Get information to Web Server
-  command: python roles/interfaces/scripts/show.py "{{ play_hosts }}" "{{ path }}"
-  run_once: True
-  delegate_to: localhost
-  
+  run_once: true
+  local_action: command python roles/interfaces/scripts/show.py "{{ play_hosts }}" "{{ path }}"

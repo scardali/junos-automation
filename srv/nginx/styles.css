@@ -4,7 +4,13 @@ h2{
 }
 
 .fix{
-    position: fixed;
+    position: absolute;
+    right: 0px;
     bottom: 0px;
-    left: 50%;
+    
+}
+.left{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
 }

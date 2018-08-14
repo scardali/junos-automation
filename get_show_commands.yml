@@ -23,18 +23,9 @@
   roles:
   - interfaces
   - alarm
-- name: Run Switch Show Commands
-  hosts: switches
-  connection: local
-  roles: 
   - ethernet
   - multicast
   - version
-- name: Run Router Show Commands
-  hosts: all
-  connection: local
-  ignore_errors: yes
-  roles:
   - lacp
 
 
