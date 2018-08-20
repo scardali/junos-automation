@@ -1,0 +1,20 @@
+ 
+- name: Show System Commits RPC
+  juniper_junos_rpc: 
+    provider: "{{ credentials }}"
+    rpcs: get-commit-information
+    format: xml
+  register: result
+
+- name: Save to file
+  copy: 
+    content: "{{ result['parsed_output']['commit-information'] }}"
+    dest: build/{{ inventory_hostname }}/commit-information.json
+    
+- name: Get information to Web Server
+  run_once: true
+  local_action: command python roles/commits/scripts/show.py "{{ play_hosts }}" "{{ path }}"
+
+- name: Get Time
+  run_once: true
+  local_action: command python roles/gettime.py /commits/ "{{ path }}"

@@ -21,12 +21,13 @@
   hosts: all
   connection: local
   roles:
-  - interfaces
-  - alarm
-  - ethernet
-  - multicast
-  - version
-  - lacp
+  - commits
+  # - interfaces
+  # - alarm
+  # - ethernet
+  # - multicast
+  # - version
+  # - lacp
 
 
 
