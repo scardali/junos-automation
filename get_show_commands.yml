@@ -16,18 +16,23 @@
       path: build/{{ inventory_hostname }}
       state: directory
       mode: 0755
+  - name: Get Time
+    run_once: true
+    local_action: command python roles/gettime.py "{{ path }}"
+
 
 - name: Run Show Commands
   hosts: all
   connection: local
   roles:
   - commits
-  # - interfaces
-  # - alarm
-  # - ethernet
-  # - multicast
-  # - version
-  # - lacp
+  - interfaces
+  - alarm
+  - ethernet
+  - multicast
+  - version
+  - lacp
+
 
 
 

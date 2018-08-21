@@ -15,6 +15,3 @@
   run_once: true
   local_action: command python roles/commits/scripts/show.py "{{ play_hosts }}" "{{ path }}"
 
-- name: Get Time
-  run_once: true
-  local_action: command python roles/gettime.py /commits/ "{{ path }}"

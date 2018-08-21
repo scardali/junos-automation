@@ -15,3 +15,4 @@
   command: python roles/alarm/scripts/show.py "{{ play_hosts }}" "{{ path }}"
   run_once: true
   delegate_to: localhost
+
