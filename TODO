@@ -1,8 +1,11 @@
-☐ Show System commit comments
-☐ Show interface extensive for mac-address and i/o errors of an interface
-☐ Show | compare rollback x
-☐ Negate search word
-☐ Nested searching
-☐ Export to CSV
-☐ Run playbook from webpage
-☐ Run individual playbooks
+
+Automated Show Command: 
+    ☐ Show System commit comments @low
+    ☐ Show interface extensive for mac-address and i/o errors of an interface @low
+    ☐ Show | compare rollback x @low
+    ✔ Negate search word @done(18-08-20 22:42)
+    ✔ Nested searching @done(18-08-20 22:42)
+    ☐ HTML Templating @critical
+    ☐ Export to CSV @high
+    ☐ Run playbook from webpage @high
+    ☐ Run individual playbooks @high
