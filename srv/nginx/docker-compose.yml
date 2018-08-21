@@ -13,7 +13,7 @@ services:
     php:
         image: php:fpm
         volumes:
-            - ./code:/code
+            - .:/code
         networks:
             - code-network
 networks:

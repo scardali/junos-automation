@@ -12,7 +12,8 @@
 
 </head>
 <body background="img/weather.png">
-      <div class='container'>
+
+  <div class='container'>
         <div class='col-sm'><br></div>
         <div class='row'>
             <h2>Automated VXLAN EVPN Troubleshooting</h2>
@@ -32,11 +33,11 @@
                     <li><a href="tasks/lacp/lacp-table.html">LACP Interface</a></li>
                     <li><a href="tasks/vlans/vlan-table.html">VLANS</a></li>
                     <li><a href="tasks/commits/commit-table.html">System Commits</a></li>
-
-
                   </ul>
                 </div>
             </div>
+            <a href="?run=true">Click Me!</a>
+            <a href="download.php">No click me, fucker</a>
         </div>
 
 
