@@ -2,4 +2,4 @@ credentials:
   host: "{{ ansible_host }}"
   user: "wistar"
   passwd: 'Juniper1'
-path: "srv/nginx/tasks"
+path: "srv/nginx/tasks/"

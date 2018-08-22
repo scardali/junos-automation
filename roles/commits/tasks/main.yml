@@ -8,10 +8,10 @@
 
 - name: Save to file
   copy: 
-    content: "{{ result['parsed_output']['commit-information'] }}"
+    content: "{{ result['parsed_output']['commit-information']['commit-history'] }}"
     dest: build/{{ inventory_hostname }}/commit-information.json
     
 - name: Get information to Web Server
   run_once: true
-  local_action: command python roles/commits/scripts/show.py "{{ play_hosts }}" "{{ path }}"
+  local_action: command python roles/show.py "{{ play_hosts }}" "{{ path }}" commit
 

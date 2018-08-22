@@ -1,6 +1,6 @@
 #!/bin/bash
 for role in roles/*; do
-    for main in $role/tasks/main.yml; do
+    for main in $role/scripts/show.py; do
         sudo rmate $main
     done
 done

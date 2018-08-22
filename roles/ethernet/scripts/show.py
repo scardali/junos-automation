@@ -64,7 +64,7 @@ def main():
             newlist.append(entry['l2ng-l2-mac-address'])
             webdata['data'].append(newlist)
 
-    with open(path+'/ethernet/ethernet-info.json','w') as f:
+    with open(path+'/ethernet/ethernet-table.json','w') as f:
         json.dump(webdata,f)
 
 

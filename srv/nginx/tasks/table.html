@@ -5,10 +5,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="mustache.js"></script>
 <script>
+    function loadTask(){
+        var template = $('#template').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+        var rendered = Mustache.render(template, {task: "version"});
+        $('#target').html(rendered);
+    }
+
     $(document).ready( function () {
         var table = $('#myTable').DataTable( {
-            "ajax": 'version-table.json',
+            "ajax": 'version/version-table.json',
             "paging": false,
 	    "scrollY": 400
         } );
@@ -17,9 +25,16 @@
         }, 5000 ); 
     } );
     
+
 </script>
+    <script id="template" type="x-tmpl-mustache">
+            Hello {{task}}!
+        </script>
 </head>
-<body>
+<body onload="loadTask()">
+    <div id="target">Loading...</div>
+
+
     <table id="myTable" class="display" style="width:100%">
         <thead>
             <tr>
@@ -28,6 +43,7 @@
             </tr>
         </thead>
     </table>
+
     <a href='version.csv'>Download as csv</a>
 </body>
 </html>

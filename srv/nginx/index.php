@@ -10,8 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+
 </head>
 <body background="img/weather.png">
+
+<p id="demo"></p>
+
 
   <div class='container'>
         <div class='col-sm'><br></div>
@@ -31,13 +35,13 @@
                     <li><a href="tasks/version/version-table.html">Version</a></li>
                     <li><a href="tasks/alarm/alarm-table.html">System Alarms</a></li>
                     <li><a href="tasks/lacp/lacp-table.html">LACP Interface</a></li>
-                    <li><a href="tasks/vlans/vlan-table.html">VLANS</a></li>
-                    <li><a href="tasks/commits/commit-table.html">System Commits</a></li>
+                    <li><a href="tasks/vlan/vlan-table.html">VLANS</a></li>
+                    <li><a href="tasks/commit/commit-table.html">System Commits</a></li>
                   </ul>
                 </div>
             </div>
             <a href="?run=true">Click Me!</a>
-            <a href="download.php">No click me, fucker</a>
+            <a href="download.php">No click me</a>
         </div>
 
 

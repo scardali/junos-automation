@@ -10,10 +10,10 @@
 - name: Save to file
   copy:
     content: "{{ result['parsed_output']['lacp-interface-information-list']['lacp-interface-information'] }}"
-    dest: build/{{ inventory_hostname }}/lacp_table.json
+    dest: build/{{ inventory_hostname }}/lacp-information.json
 
 - name: Get information to Web Server
-  command: python roles/lacp/scripts/show.py "{{ play_hosts }}" "{{ path }}"
+  command: python roles/show.py "{{ play_hosts }}" "{{ path }}" lacp
   run_once: true
   delegate_to: localhost
   register: result

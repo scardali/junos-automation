@@ -51,7 +51,10 @@ def main():
                     newlist = newlist[:-1]
             
     with open(path+'/vlans/vlan-table.json','w') as f:
-        json.dump(webdata,f)            
+        json.dump(webdata,f)
+    
+    
+    
 
 
 if __name__ == "__main__":

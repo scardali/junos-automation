@@ -9,10 +9,10 @@
 - name: Save to file
   copy:
     content: "{{ result['parsed_output']['alarm-information'] }}"
-    dest: build/{{ inventory_hostname }}/alarm_table.json
+    dest: build/{{ inventory_hostname }}/alarm-information.json
 
 - name: Get information to Web Server
-  command: python roles/alarm/scripts/show.py "{{ play_hosts }}" "{{ path }}"
+  command: python roles/show.py "{{ play_hosts }}" "{{ path }}" alarm
   run_once: true
   delegate_to: localhost
 

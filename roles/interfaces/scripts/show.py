@@ -37,7 +37,7 @@ def main():
                 newlist.append('')
             webdata['data'].append(newlist)
 
-    with open(path+'/interface/interface-info.json','w') as f:
+    with open(path+'/interface/interface-table.json','w') as f:
         json.dump(webdata,f)
 
 if __name__ == "__main__":
