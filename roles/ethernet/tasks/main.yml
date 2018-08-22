@@ -12,8 +12,8 @@
     dest: build/{{ inventory_hostname }}/ethernet-information.json
 
 - name: Get information to Web Server
-  command: python roles/show.py "{{ play_hosts }}" "{{ path }}" ethernet
   run_once: true
-  delegate_to: localhost
+  local_action: command python roles/show.py "{{ play_hosts }}" "{{ path }}" ethernet
+
 
   

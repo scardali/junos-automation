@@ -936,13 +936,6 @@
       "Vlan100", 
       "default-switch", 
       "NA", 
-      "esi.1745*"
-    ], 
-    [
-      "vQFX02", 
-      "Vlan100", 
-      "default-switch", 
-      "NA", 
       "esi.1774*"
     ], 
     [
@@ -1237,7 +1230,14 @@
       "Vlan100", 
       "default-switch", 
       "NA", 
-      "esi.1783*"
+      "esi.1774*"
+    ], 
+    [
+      "vQFX03", 
+      "Vlan100", 
+      "default-switch", 
+      "NA", 
+      "esi.1781*"
     ], 
     [
       "vQFX03", 

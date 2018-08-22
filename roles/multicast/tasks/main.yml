@@ -11,7 +11,7 @@
     dest: build/{{ inventory_hostname }}/multicast-information.json
 
 - name: Get information to Web Server
-  command: python roles/show.py "{{ play_hosts }}" "{{ path }}" multicast
   run_once: true
-  delegate_to: localhost
+  local_action: command python roles/show.py "{{ play_hosts }}" "{{ path }}" multicast
+
   

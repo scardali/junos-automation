@@ -132,7 +132,6 @@ vQFX02,SYS5_H_RTNET_TST_RH_CLU,default-switch,260,No interfaces in this vlan
 vQFX02,SYS5_H_TEST_172.16.128.0-23,default-switch,931,No interfaces in this vlan
 vQFX02,UpperRightSWITCH-751,default-switch,751,No interfaces in this vlan
 vQFX02,UpperRightSWITCH-752,default-switch,752,No interfaces in this vlan
-vQFX02,Vlan100,default-switch,NA,esi.1745*
 vQFX02,Vlan100,default-switch,NA,esi.1774*
 vQFX02,Vlan100,default-switch,NA,vtep.32769*
 vQFX02,Vlan100,default-switch,NA,vtep.32770*
@@ -175,7 +174,8 @@ vQFX03,SYS5_H_RTNET_TST_RH_CLU,default-switch,260,No interfaces in this vlan
 vQFX03,SYS5_H_TEST_172.16.128.0-23,default-switch,931,No interfaces in this vlan
 vQFX03,UpperRightSWITCH-751,default-switch,751,No interfaces in this vlan
 vQFX03,UpperRightSWITCH-752,default-switch,752,No interfaces in this vlan
-vQFX03,Vlan100,default-switch,NA,esi.1783*
+vQFX03,Vlan100,default-switch,NA,esi.1774*
+vQFX03,Vlan100,default-switch,NA,esi.1781*
 vQFX03,Vlan100,default-switch,NA,vtep.32769*
 vQFX03,Vlan100,default-switch,NA,vtep.32770*
 vQFX03,Vlan100,default-switch,NA,vtep.32771*

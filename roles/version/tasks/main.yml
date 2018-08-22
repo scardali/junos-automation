@@ -12,9 +12,6 @@
     dest: build/{{ inventory_hostname }}/version-information.json
 
 - name: Get information to Web Server
-  command: python roles/show.py "{{ play_hosts }}" "{{ path }}" version
   run_once: true
-  delegate_to: localhost
-  register: result
-- name: print
-  debug: var=result
+  local_action: command python roles/show.py "{{ play_hosts }}" "{{ path }}" version
+
