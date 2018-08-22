@@ -10,7 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-
 </head>
 <body background="img/weather.png">
 
@@ -29,17 +28,18 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="tasks/ethernet/ethernet-table.html">Ethernet Switching Table</a></li>
-                    <li><a href="tasks/interface/interface-table.html">Interface Descriptions</a></li>
-                    <li><a href="tasks/multicast/multicast-table.html">IGMP Snooping Interfaces</a></li>
-                    <li><a href="tasks/version/version-table.html">Version</a></li>
-                    <li><a href="tasks/alarm/alarm-table.html">System Alarms</a></li>
-                    <li><a href="tasks/lacp/lacp-table.html">LACP Interface</a></li>
-                    <li><a href="tasks/vlan/vlan-table.html">VLANS</a></li>
-                    <li><a href="tasks/commit/commit-table.html">System Commits</a></li>
+                    <li><a href="table.php?task=version">Version</a></li>
+                    <li><a href="table.php?task=vlan">Vlan</a></li>
+                    <li><a href="table.php?task=commit">Commit</a></li>
+                    <li><a href="table.php?task=interface">Interface</a></li>
+                    <li><a href="table.php?task=alarm">Alarm</a></li>
+                    <li><a href="table.php?task=ethernet">Ethernet</a></li>
+                    <li><a href="table.php?task=multicast">Multicast</a></li>
+                    <li><a href="table.php?task=lacp">LACP</a></li>
                   </ul>
                 </div>
             </div>
+            <button type='button' onclick='myfunc()'> Click this</button>
             <a href="?run=true">Click Me!</a>
             <a href="download.php">No click me</a>
         </div>
