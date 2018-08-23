@@ -1,4 +1,2 @@
-**/*.json
 *.retry
 **/.DS_Store
-**/*.csv
