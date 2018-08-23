@@ -98,28 +98,26 @@
         
         /***New Testing ***/
         $('button.print-bt').on('click', function() {               
-        var fvData = table.rows({search: 'applied'}).data();
+        var rowData = table.rows({search: 'applied'}).data();
         var url = 'csv.php?q=';
-        for(i = 0; i < fvData.length; i++){
-            url += fvData[i];
+        for(i = 0; i < rowData.length; i++){
+            url += rowData[i];
             url += "_";
         }
 
+        jsondata = JSON.stringify(rowData);
         $.ajax({
             type: 'POST',
-            data: 'fvData',
-            url: url,
+            data: 'jsondata',
+            url: 'csv.php?q=hello_world',
             success: function(response){
                 alert(response);
             }
-        });
-
-
         } );
 
+        } );
     } );
 
-  
 </script>
 </head>
 <body>
