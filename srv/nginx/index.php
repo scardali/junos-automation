@@ -39,9 +39,6 @@
                   </ul>
                 </div>
             </div>
-            <button type='button' onclick='myfunc()'> Click this</button>
-            <a href="?run=true">Click Me!</a>
-            <a href="download.php">No click me</a>
         </div>
 
 
