@@ -2,9 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href=" http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+<!-- Use this for local development -->
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+<script src="js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     function filterGlobal () {
         $('#myTable').DataTable().search(
@@ -24,7 +28,7 @@
     $(document).ready( function () {
         var task = <?php echo json_encode($_GET['task'], JSON_HEX_TAG); ?>;
         let filename = 'tasks/'+task+'/'+task+'-table.json';
-        var csvfile = 'tasks/'+task+'/'+task+'.csv';
+        var csvfile = 'tasks/'+task+'/parsed-data.csv';
         var link = "<a href = " + csvfile + ">Download as CSV</a>";
         document.getElementById('csvlink').innerHTML = link;
         /**Render the page **/
@@ -75,8 +79,18 @@
                     <td align='center'><input type='checkbox' class='column_filter' id='col"+i+"_smart' checked='checked'></td>\
                 </tr>";
         }
+
         document.getElementById('table').innerHTML = table_headers;
         document.getElementById('searchbars').innerHTML = search_headers;
+        var url = "get_time.php?file="+filename;
+        $.ajax({
+            type: 'POST',
+            url: url,
+            success: function(response){
+                document.getElementById('timestamp').innerHTML = "Data last updated: "+response;
+            }
+        });
+
         /**Render the tables **/
         var table = $('#myTable').DataTable( {
             "ajax": filename,
@@ -99,20 +113,16 @@
         /***New Testing ***/
         $('button.print-bt').on('click', function() {               
         var rowData = table.rows({search: 'applied'}).data();
-        var url = 'csv.php?q=';
+
+        var url = 'csv.php?task='+task+"&headers="+headers+"&d0=";
         for(i = 0; i < rowData.length; i++){
             url += rowData[i];
-            url += "_";
+            var varnum = i+1;
+            url += "&d"+varnum+"=";
         }
-
-        jsondata = JSON.stringify(rowData);
         $.ajax({
             type: 'POST',
-            data: 'jsondata',
-            url: 'csv.php?q=hello_world',
-            success: function(response){
-                alert(response);
-            }
+            url: url,
         } );
 
         } );
@@ -139,7 +149,9 @@
             <thead><tr id='table'></tr></thead>
         </table>
     </div>
-    <button class="print-bt" type="button" onclick="" style="width:150px; line-height:2;">Print</button>
+    <div id='timestamp'><p></p></div>
+    <button class="print-bt" type="button" onclick="" style="width:150px; line-height:2;">Format CSV</button>
     <div id='csvlink'></div>
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 </body>
 </html>
