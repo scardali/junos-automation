@@ -81,7 +81,8 @@
         var table = $('#myTable').DataTable( {
             "ajax": filename,
             "paging": false,
-            "scrollY": 400
+            "scrollY": 400,
+            "select": true
         } );
         setInterval( function (){
             table.ajax.reload();
@@ -94,7 +95,27 @@
         $('input.column_filter').on( 'keyup click', function () {
         filterColumn( $(this).parents('tr').attr('data-column') );
         } );
+        
+        /***New Testing ***/
+        $('button.print-bt').on('click', function() {               
+        var fvData = table.rows({search: 'applied'}).data();
+        var url = 'csv.php?q=';
+        for(i = 0; i < fvData.length; i++){
+            url += fvData[i];
+            url += "_";
+        }
 
+        $.ajax({
+            type: 'POST',
+            data: 'fvData',
+            url: url,
+            success: function(response){
+                alert(response);
+            }
+        });
+
+
+        } );
 
     } );
 
@@ -114,12 +135,13 @@
         </thead>
         <tbody id="searchbars"></tbody>
     </table>
-    <table id="myTable" class="display" style="width:100%">
-        <thead>
-            <tr id='table'></tr>
-        </thead>
-    </table>
-    <div id='csvlink'></div>
 
+    <div id="main_wrapper" style="text-align:center;">
+        <table id="myTable" class="display" style="width:100%">
+            <thead><tr id='table'></tr></thead>
+        </table>
+    </div>
+    <button class="print-bt" type="button" onclick="" style="width:150px; line-height:2;">Print</button>
+    <div id='csvlink'></div>
 </body>
 </html>
