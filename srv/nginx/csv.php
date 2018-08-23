@@ -1,15 +1,19 @@
 <?php 
 $headers = array("switch","junos version");
-$data = array("ex","junos-18");
-
 $task = $_GET['task'];
+$headerline = $_GET['headers'];
 $filename = "tasks/$task/parsed-data.csv";
 $csvfile = fopen($filename,'w') or die("Unable to open file.");
-for($i = 0; $i < count($headers)-1; $i++){
-    fwrite($csvfile,$headers[$i]);
-    fwrite($csvfile,",");
+fwrite($csvfile,$headerline);
+fwrite($csvfile,"\n");
+$count = count(explode('&', $_SERVER['QUERY_STRING']));
+$count -= 3;
+for($i = 0; $i < $count; $i++){
+    $var = sprintf("d%d",$i);
+    $data = $_GET[$var];
+    fwrite($csvfile,$data);
+    fwrite($csvfile,"\n");
 }
-fwrite($csvfile,$headers[count($headers)-1]);
-fwrite($csvfile,"\n")
 
+fclose($csvfile);
 ?>
