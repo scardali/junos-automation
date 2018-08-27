@@ -1,2 +1,0 @@
-Switch,Vlan Name,Multicast Interface,Multicast Group Address,Multicast Listener Address
-ex2300c,vlan35,ge-0/0/8.0,239.255.255.250,172.30.35.250
