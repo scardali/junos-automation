@@ -29,8 +29,6 @@
         var task = <?php echo json_encode($_GET['task'], JSON_HEX_TAG); ?>;
         let filename = 'tasks/'+task+'/'+task+'-table.json';
         var csvfile = 'tasks/'+task+'/'+task+'.csv';
-        var link = "<a href = " + csvfile + ">Download as CSV</a>";
-        document.getElementById('csvlink').innerHTML = link;
 
         /**Render the page **/
         var headers;
@@ -158,6 +156,5 @@
     </div>
     <div id='timestamp'><p></p></div>
     <button class="print-bt" type="button" onclick="" style="width:150px; line-height:2;">Download as CSV</button>
-    <div id='csvlink'></div>
 </body>
 </html>
