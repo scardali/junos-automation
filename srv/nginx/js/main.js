@@ -63,6 +63,7 @@ function filterGlobal () {
         $('#global_smart').prop('checked')
     ).draw();
 }
+
 function filterColumn ( i ) {
     $('#myTable').DataTable().column( i ).search(
         $('#col'+i+'_filter').val(),
@@ -70,6 +71,7 @@ function filterColumn ( i ) {
         $('#col'+i+'_smart').prop('checked')
     ).draw();
 }
+
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
