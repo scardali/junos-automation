@@ -28,9 +28,10 @@
     $(document).ready( function () {
         var task = <?php echo json_encode($_GET['task'], JSON_HEX_TAG); ?>;
         let filename = 'tasks/'+task+'/'+task+'-table.json';
-        var csvfile = 'tasks/'+task+'/parsed-data.csv';
+        var csvfile = 'tasks/'+task+'/'+task+'.csv';
         var link = "<a href = " + csvfile + ">Download as CSV</a>";
         document.getElementById('csvlink').innerHTML = link;
+
         /**Render the page **/
         var headers;
         switch(task){
@@ -110,20 +111,26 @@
         filterColumn( $(this).parents('tr').attr('data-column') );
         } );
         
-        /***New Testing ***/
         $('button.print-bt').on('click', function() {               
-        var rowData = table.rows({search: 'applied'}).data();
+            var rowData = table.rows({search: 'applied'}).data();
 
-        var url = 'csv.php?task='+task+"&headers="+headers+"&d0=";
-        for(i = 0; i < rowData.length; i++){
-            url += rowData[i];
-            var varnum = i+1;
-            url += "&d"+varnum+"=";
-        }
-        $.ajax({
-            type: 'POST',
-            url: url,
-        } );
+            var data = [];
+            for(i = 0; i < rowData.length; i++)
+                data.push(rowData[i]);
+            
+            $.ajax({
+                type: 'POST',
+                url: 'csv.php',
+                data: {
+                    task: task,
+                    headers: headers, 
+                    data: data
+                    },
+                success: function(response){
+                    document.location.href = csvfile;
+                    console.log(response);
+                }
+            });
 
         } );
     } );
@@ -150,8 +157,7 @@
         </table>
     </div>
     <div id='timestamp'><p></p></div>
-    <button class="print-bt" type="button" onclick="" style="width:150px; line-height:2;">Format CSV</button>
+    <button class="print-bt" type="button" onclick="" style="width:150px; line-height:2;">Download as CSV</button>
     <div id='csvlink'></div>
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 </body>
 </html>
