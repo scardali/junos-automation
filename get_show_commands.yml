@@ -6,21 +6,16 @@
   connection: local
   gather_facts: no
   tasks:
-  # - name: Checking NETCONF connectivity
-  #   wait_for:
-  #     host: "{{ ansible_host }}"
-  #     port: 830
-  #     timeout: 5
+  - name: Checking NETCONF connectivity
+    wait_for:
+      host: "{{ ansible_host }}"
+      port: 830
+      timeout: 5
   - name: Make a directory for the host
     file: 
       path: build/{{ inventory_hostname }}
       state: directory
       mode: 0755
-  - name: Get Time
-    run_once: true
-    local_action: command python roles/gettime.py "{{ path }}"
-
-
 - name: Run Show Commands
   hosts: all
   connection: local
