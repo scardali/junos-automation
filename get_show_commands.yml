@@ -21,7 +21,7 @@
   connection: local
   roles:
   - version
-  - vlans
+  - vlan
   - commits
   - interfaces
   - alarm
