@@ -9,13 +9,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/ansible.js"></script>
 
 </head>
 <body background="img/weather.png">
 
 <p id="demo"></p>
-
-
   <div class='container'>
         <div class='col-sm'><br></div>
         <div class='row'>
@@ -39,9 +38,8 @@
                   </ul>
                 </div>
             </div>
+            <button class="ansible-bt" type="button" onclick="" style="width:150px; line-height:2;">Run Playbook </button>
         </div>
-
-
 <br>
 <img src="img/juniper.png" alt="juniper_logo"  height="300" class="fix" align="center">
 
