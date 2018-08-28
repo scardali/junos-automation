@@ -95,7 +95,7 @@ function renderSearchbars(task){
             headers = ['Switch','Client','Sequence Number','User','Date/Time'];
             break;
         case 'interface':
-            headers = ['Switch','Interface','Description','Operational Status','Admin Status','Address Family'];
+            headers = ['Switch','Interface','Description','Operational Status','Admin Status','Address Family','HW Address','Input Errors','Output Errors'];
             break;
         case 'alarm':
             headers = ['Switch','Alarm Class','Alarm Description','Alarm Time','Alarm Type'];

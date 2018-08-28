@@ -123,6 +123,16 @@ def parse_web_data(role, host, webdata, vlans):
                 newlist.append(interface['logical-interface']['address-family']['address-family-name'])
             except:
                 newlist.append('')
+            try:
+                newlist.append(interface['current-physical-address'])
+            except:
+                newlist.append('')
+            try: 
+                newlist.append(interface['input-error-list']['input-errors'])
+                newlist.append(interface['output-error-list']['output-errors'])
+            except:
+                newlist.append('')
+                newlist.append('')
             webdata['data'].append(newlist)
     elif role == 'alarm':
         newlist = []

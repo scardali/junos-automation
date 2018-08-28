@@ -3,6 +3,8 @@
   juniper_junos_rpc: 
     provider: "{{ credentials }}"
     rpcs: get-interface-information
+    kwargs: 
+      extensive: true
     format: xml
   register: result
 
