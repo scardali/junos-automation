@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-import subprocess
-import sys,os
+import os
 with open('run.txt','r') as f:
     lines = f.read().splitlines()
 cmd = 'sudo docker run --rm -v $PWD:$PWD -w $PWD -it juniper/pyez-ansible ansible-playbook get_show_commands.yml --tags "'
