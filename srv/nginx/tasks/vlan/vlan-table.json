@@ -936,7 +936,7 @@
       "Vlan100", 
       "default-switch", 
       "NA", 
-      "esi.1774*"
+      "esi.1753*"
     ], 
     [
       "vQFX02", 
@@ -1230,14 +1230,7 @@
       "Vlan100", 
       "default-switch", 
       "NA", 
-      "esi.1774*"
-    ], 
-    [
-      "vQFX03", 
-      "Vlan100", 
-      "default-switch", 
-      "NA", 
-      "esi.1781*"
+      "esi.1750*"
     ], 
     [
       "vQFX03", 
@@ -1245,13 +1238,6 @@
       "default-switch", 
       "NA", 
       "vtep.32769*"
-    ], 
-    [
-      "vQFX03", 
-      "Vlan100", 
-      "default-switch", 
-      "NA", 
-      "vtep.32770*"
     ], 
     [
       "vQFX03", 
@@ -1266,6 +1252,13 @@
       "default-switch", 
       "NA", 
       "vtep.32772*"
+    ], 
+    [
+      "vQFX03", 
+      "Vlan100", 
+      "default-switch", 
+      "NA", 
+      "vtep.32773*"
     ], 
     [
       "vQFX03", 
@@ -1538,6 +1531,13 @@
       "Vlan100", 
       "default-switch", 
       "NA", 
+      "esi.1750*"
+    ], 
+    [
+      "vQFX04", 
+      "Vlan100", 
+      "default-switch", 
+      "NA", 
       "vtep.32769*"
     ], 
     [
@@ -1559,7 +1559,7 @@
       "Vlan100", 
       "default-switch", 
       "NA", 
-      "vtep.32772*"
+      "vtep.32774*"
     ], 
     [
       "vQFX04", 
