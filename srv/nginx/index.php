@@ -43,7 +43,6 @@
 
 
 <br>
-<p><div><object data="time.txt"></object></div></p>
 <img src="img/juniper.png" alt="juniper_logo"  height="300" class="fix" align="center">
 
 </body>
