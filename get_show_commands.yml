@@ -19,15 +19,16 @@
 - name: Run Show Commands
   hosts: all
   connection: local
+  tasks:
   roles:
-  - version
-  - vlan
-  - commits
-  - interfaces
-  - alarm
-  - ethernet
-  - multicast
-  - lacp
+  - {role: version, tags: ['version']}
+  - {role: vlan, tags: ['vlan']}
+  - {role: commit, tags: ['commit']}
+  - {role: interface, tags: ['interface']}
+  - {role: alarm, tags: ['alarm']}
+  - {role: ethernet, tags: ['ethernet']}
+  - {role: multicast, tags: ['multicast']}
+  - {role: lacp, tags: ['lacp']}
 
 
 
