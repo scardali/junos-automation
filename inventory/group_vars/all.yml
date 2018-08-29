@@ -2,4 +2,4 @@ credentials:
   host: "{{ ansible_host }}"
   user: "wistar"
   passwd: 'Juniper1'
-path: "web/tasks/"
+path: "tasks/"
