@@ -1,4 +1,4 @@
- 
+--- 
 - name: Show interfaces RPC
   juniper_junos_rpc: 
     provider: "{{ credentials }}"
