@@ -18,7 +18,6 @@ function downloadAsCsv(table, headers, task){
         var data = [];
         for(i = 0; i < rowData.length; i++)
             data.push(rowData[i]);
-        
         $.ajax({
             type: 'POST',
             url: 'csv.php',
@@ -28,6 +27,7 @@ function downloadAsCsv(table, headers, task){
                 data: data
                 },
             success: function(response){
+                console.log(response);
                 document.location.href = csvfile;
             }
         });
@@ -92,7 +92,7 @@ function renderSearchbars(task){
             headers = ['Switch','Vlan Name','Vxlan Name','Vlan Tag','Interface'];
             break;
         case 'commit':
-            headers = ['Switch','Client','Sequence Number','User','Date/Time'];
+            headers = ['Switch','Client','Sequence Number','User','Date/Time','Comment'];
             break;
         case 'interface':
             headers = ['Switch','Interface','Description','Operational Status','Admin Status','Address Family','HW Address','Input Errors','Output Errors'];

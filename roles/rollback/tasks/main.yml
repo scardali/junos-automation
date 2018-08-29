@@ -1,0 +1,19 @@
+---
+- name: Show Rollback RPC
+  juniper_junos_rpc: 
+    provider: "{{ credentials }}"
+    rpcs: get-rollback-information
+    kwargs: 
+      rollback: '9'
+      compare: '1'
+    format: xml
+  register: result
+
+- name: Save to file
+  copy: 
+    content: "{{ result['parsed_output'] }}"
+    dest: build/{{ inventory_hostname }}/rollback-information.json
+
+- name: Get information to Web Server
+  run_once: true
+  local_action: command python roles/show.py "{{ play_hosts }}" "{{ path }}" rollback

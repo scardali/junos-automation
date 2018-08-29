@@ -13,7 +13,7 @@ def get_csv(role, path, webdata):
             elif role == 'vlan':
                 header = ['Switch','Vlan Name','VXLAN Name','Vlan Tag','Interface']
             elif role == 'commit':
-                header = ['Switch','Client','Sequence Number','User','Date/Time']
+                header = ['Switch','Client','Sequence Number','User','Date/Time','Comment']
             elif role == 'interface':
                 header = ['Switch','Interface','Description','Operational Status','Admin Status','Address Family']
             elif role == 'alarm':
@@ -106,6 +106,10 @@ def parse_web_data(role, host, webdata, vlans):
             newlist.append(commit['sequence-number'])
             newlist.append(commit['user'])
             newlist.append(commit['date-time'])
+            try: 
+                newlist.append(commit['log'])
+            except:
+                newlist.append('')
             webdata['data'].append(newlist)
     elif role == 'interface':
         for interface in host['physical-interface']:

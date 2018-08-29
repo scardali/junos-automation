@@ -1,4 +1,5 @@
 <?php 
+    echo var_dump($_POST['data']);
     $task = $_POST['task'];
     $headerline = $_POST['headers'];
     $filename = "tasks/$task/$task.csv";

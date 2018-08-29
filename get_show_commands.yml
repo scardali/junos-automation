@@ -16,9 +16,10 @@
       path: build/{{ inventory_hostname }}
       state: directory
       mode: 0755
-- name: Run Show Commands
+- name: Execute Roles
   hosts: all
   connection: local
+  gather_facts: no
   tasks:
   roles:
   - {role: version, tags: ['version']}
@@ -29,6 +30,7 @@
   - {role: ethernet, tags: ['ethernet']}
   - {role: multicast, tags: ['multicast']}
   - {role: lacp, tags: ['lacp']}
+  - {role: rollback, tags: ['rollback']}
 
 
 

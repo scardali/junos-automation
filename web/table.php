@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href=" http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <!-- Use this for local development -->
-<script src="js/jquery.min.js"></script>
+<!-- <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script> -->
 <script src="js/main.js"></script>
 
 </head>
