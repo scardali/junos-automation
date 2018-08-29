@@ -4,8 +4,8 @@
     provider: "{{ credentials }}"
     rpcs: get-rollback-information
     kwargs: 
+      compare: '2'
       rollback: '9'
-      compare: '1'
     format: xml
   register: result
 
