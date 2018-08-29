@@ -27,7 +27,6 @@ function downloadAsCsv(table, headers, task){
                 data: data
                 },
             success: function(response){
-                console.log(response);
                 document.location.href = csvfile;
             }
         });
