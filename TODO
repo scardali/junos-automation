@@ -1,11 +1,11 @@
 
 Automated Show Command: 
-    ☐ Show System commit comments @low
-    ☐ Show interface extensive for mac-address and i/o errors of an interface @low
+    ☐ Show System commit comments @done
+    ☐ Show interface extensive for mac-address and i/o errors of an interface @done
     ☐ Show | compare rollback x @low
     ✔ Negate search word @done(18-08-20 22:42)
     ✔ Nested searching @done(18-08-20 22:42)
-    ☐ HTML Templating @critical
-    ☐ Export to CSV @high
+    ☐ HTML Templating @done
+    ☐ Export to CSV @done
     ☐ Run playbook from webpage @high
-    ☐ Run individual playbooks @high
+    ✔ Run individual playbooks @done(18-08-29 11:57)
