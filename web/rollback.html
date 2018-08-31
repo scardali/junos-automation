@@ -1,0 +1,21 @@
+<head>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready( function () {
+    var entry = "";
+    $.getJSON("tasks/rollback/rollback-table.json",function(json){
+        for(i = 0; i < json['data'].length; i++){
+            data = json['data'][i];
+            entry += "<h1>"+data[0]+"</h1>\
+            <p>"+data[1]+"</p>";
+        }
+        document.getElementById('main').innerHTML = entry;
+    });
+});
+</script>
+</head>
+
+<body>
+<div id="main"></div>
+
+</body>
