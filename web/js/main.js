@@ -26,12 +26,12 @@ function downloadAsCsv(table, headers, task){
                 headers: headers, 
                 data: data
                 },
-            success: function(response){
+            success: function(){
                 document.location.href = csvfile;
             }
         });
 
-    } );
+   } );
 }
 
 function renderTable(filename){

@@ -23,6 +23,7 @@
                 <th>Use smart search</th>
             </tr>
         </thead>
+        <p>Negation regex command: ^(?!.*searchterm).*$</p>
         <tbody id="searchbars"></tbody>
     </table>
 
