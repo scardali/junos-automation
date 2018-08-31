@@ -31,8 +31,4 @@
   - {role: multicast, tags: ['multicast']}
   - {role: lacp, tags: ['lacp']}
   - {role: rollback, tags: ['rollback']}
-
-
-
-
-
+  - {role: config, tags: ['config']}
