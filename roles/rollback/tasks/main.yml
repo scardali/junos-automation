@@ -11,7 +11,7 @@
 
 - name: Save to file
   copy: 
-    content: "{{ result['parsed_output'] }}"
+    content: "{{ result['parsed_output']['rollback-information']['configuration-information'] }}"
     dest: build/{{ inventory_hostname }}/rollback-information.json
 
 - name: Get information to Web Server

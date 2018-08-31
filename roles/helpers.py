@@ -24,6 +24,8 @@ def get_csv(role, path, webdata):
                 header = ['Switch','Vlan Name','Multicast Interface','Multicast Group Address','Multicast Listener Address']
             elif role == 'lacp':
                 header = ['Switch','AE Interface','Receive Status','Interface Name','Transmit Status','Mux State']
+            elif role == 'rollback':
+                header = ['Switch','configuration']
             csvwriter.writerow(header)
             count += 1
         csvwriter.writerow(datalist)
@@ -50,6 +52,11 @@ def parse_data(hostname, role, data):
         newval['snooping-information'] = data
     elif role == 'lacp':
         newval['interface-information'] = data
+    elif role == 'rollback':
+        try:
+            newval['configuration'] = data['configuration-output']
+        except:
+            newval['configuration'] = 'No rollback information for this device'
     elif data == None:
         pass
     return newval
@@ -241,6 +248,11 @@ def parse_web_data(role, host, webdata, vlans):
             newlist.append("LACP subsystem is not running - not needed by configuration")
             [newlist.append("") for _ in range(0,4)]
             webdata['data'].append(newlist)
+    elif role == 'rollback':
+        newlist = []
+        newlist.append(host['hostname'])
+        newlist.append(host['configuration'])
+        webdata['data'].append(newlist)
     elif role == None:
         pass
 

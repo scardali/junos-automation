@@ -4,13 +4,11 @@ import json
 import ast
 import csv
 from helpers import *
-
 def main():
     """Convert argument to list"""
     hosts = sys.argv[1]
     path = sys.argv[2]
     role = sys.argv[3]
-
     hosts = ast.literal_eval(hosts)
     hosts = [n.strip() for n in hosts]
     """Put data for all hosts in json"""
