@@ -7,7 +7,7 @@ $(document).ready( function () {
         for(i = 0; i < json['data'].length; i++){
             data = json['data'][i];
             entry += "<h1>"+data[0]+"</h1>\
-            <p>"+data[1]+"</p>";
+            <p>"+data[1]+"</p><br>";
         }
         document.getElementById('main').innerHTML = entry;
     });
