@@ -1,3 +1,28 @@
 {
-  "data": []
+  "data": [
+    [
+      "ex2300c", 
+      ""
+    ], 
+    [
+      "vQFX00", 
+      "[edit] - chassis { - aggregated-devices { - ethernet { - device-count 1; - } - } - } [edit interfaces] - xe-0/0/5 { - ether-options { - 802.3ad ae0; - } - } - xe-0/0/6 { - ether-options { - 802.3ad ae0; - } - } - ae0 { - aggregated-ether-options { - lacp { - active; - } - } - unit 0 { - family inet { - address 10.1.1.1/24; - } - } - } [edit snmp] + v3 { + snmp-community 1 { + community-name \"$9$1pkhlMN-w4aU7-PQF/AtWLx-wg.mTQ39\"; ## SECRET-DATA + security-name sflow-snmp; + } + } [edit snmp] - community space { - authorization read-write; - } - community sflow-snmp { - authorization read-write; - clients { - 172.30.36.48/32; - } - } [edit snmp trap-group space targets] - 172.30.36.130; - 172.30.37.128;"
+    ], 
+    [
+      "vQFX01", 
+      "[edit] - chassis { - aggregated-devices { - ethernet { - device-count 1; - } - } - } [edit interfaces] - xe-0/0/5 { - ether-options { - 802.3ad ae0; - } - } - xe-0/0/6 { - ether-options { - 802.3ad ae0; - } - } - ae0 { - aggregated-ether-options { - lacp { - active; - } - } - unit 0 { - family inet { - address 10.1.1.1/24; - } - } - } [edit snmp] - community sflow-snmp { - authorization read-write; - clients { - 172.30.36.48/32; - } - } [edit snmp trap-group space targets] - 172.30.36.48; [edit protocols sflow] + interfaces ge-0/0/0.0; - interfaces xe-0/0/0.0; + interfaces ge-0/0/1.0; - interfaces xe-0/0/1.0; + interfaces ge-0/0/2.0; - interfaces xe-0/0/2.0; - interfaces xe-0/0/3.0; - interfaces xe-0/0/4.0; + interfaces ge-0/0/5.0; + interfaces ge-0/0/7.0;"
+    ], 
+    [
+      "vQFX02", 
+      "[edit] - chassis { - aggregated-devices { - ethernet { - device-count 1; - } - } - } [edit interfaces] - xe-0/0/5 { - ether-options { - 802.3ad ae0; - } - } - xe-0/0/6 { - ether-options { - 802.3ad ae0; - } - } - ae0 { - aggregated-ether-options { - lacp { - active; - } - } - unit 0 { - family inet { - address 10.1.1.1/24; - } - } - } [edit snmp community space] + clients { + 172.30.36.48/32; + } [edit snmp] - community sflow-snmp { - authorization read-write; - clients { - 172.30.36.48/32; - } - } [edit snmp] + traceoptions { + file snmp-trace; + flag all; + }"
+    ], 
+    [
+      "vQFX03", 
+      "No rollback information for this device"
+    ], 
+    [
+      "vQFX04", 
+      "[edit] - chassis { - aggregated-devices { - ethernet { - device-count 1; - } - } - } [edit interfaces] - xe-0/0/5 { - ether-options { - 802.3ad ae0; - } - } - xe-0/0/6 { - ether-options { - 802.3ad ae0; - } - } - ae0 { - aggregated-ether-options { - lacp { - active; - } - } - unit 0 { - family inet { - address 10.1.1.1/24; - } - } - } [edit snmp] - community sflow-snmp { - authorization read-write; - clients { - 172.30.36.48/32; - } - } [edit protocols] - sflow { - sample-rate egress 1000; - collector 172.30.36.48 { - udp-port 5600; - } - interfaces xe-0/0/0.0; - interfaces xe-0/0/1.0; - interfaces xe-0/0/2.0; - interfaces xe-0/0/3.0; - interfaces xe-0/0/4.0; - }"
+    ]
+  ]
 }
