@@ -1,0 +1,6 @@
+- name: Show config rpc
+  juniper_junos_command:
+    provider: "{{credentials}}"
+    commands:
+      - "show configuration"
+    dest_dir: "temp"
