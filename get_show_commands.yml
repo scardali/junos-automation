@@ -6,6 +6,9 @@
   connection: local
   gather_facts: no
   tasks:
+  - name: Install python packages
+    pip:
+      requirements: requirements.txt
   - name: Checking NETCONF connectivity
     wait_for:
       host: "{{ ansible_host }}"
