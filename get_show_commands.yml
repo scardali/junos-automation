@@ -8,7 +8,7 @@
   tasks:
   - name: Install python packages
     pip:
-      requirements: requirements.txt
+      requirements: ./requirements.txt
   - name: Checking NETCONF connectivity
     wait_for:
       host: "{{ ansible_host }}"
