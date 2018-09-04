@@ -84,30 +84,14 @@ function getParameterByName(name, url) {
 function renderSearchbars(task){
     var headers;
     switch(task){
-        case 'version':
-            headers = ['Switch','Junos Version'];
-            break;
-        case 'vlan':
-            headers = ['Switch','Vlan Name','Vxlan Name','Vlan Tag','Interface'];
-            break;
-        case 'commit':
-            headers = ['Switch','Client','Sequence Number','User','Date/Time','Comment'];
-            break;
-        case 'interface':
-            headers = ['Switch','Interface','Description','Operational Status','Admin Status','Address Family','HW Address','Input Errors','Output Errors'];
-            break;
-        case 'alarm':
-            headers = ['Switch','Alarm Class','Alarm Description','Alarm Time','Alarm Type'];
-            break; 
-        case 'ethernet':
-            headers = ['Switch','Vlan Name','Vlan ID','Interface','Mac'];
-            break;
-        case 'multicast':
-            headers = ['Switch','Vlan Name','Multicast Interface','Multicast Group Address','Multicast Listener Address'];
-            break;
-        case 'lacp':
-            headers = ['Switch','AE Interface','Receive Status','Interface Name','Transmit Status','Mux State'];
-            break;                
+        case 'version': headers = ['Switch','Junos Version']; break;
+        case 'vlan': headers = ['Switch','Vlan Name','Vxlan Name','Vlan Tag','Interface']; break;
+        case 'commit': headers = ['Switch','Client','Sequence Number','User','Date/Time','Comment']; break;
+        case 'interface': headers = ['Switch','Interface','Description','Operational Status','Admin Status','Address Family','HW Address','Input Errors','Output Errors']; break;
+        case 'alarm': headers = ['Switch','Alarm Class','Alarm Description','Alarm Time','Alarm Type']; break; 
+        case 'ethernet': headers = ['Switch','Vlan Name','Vlan ID','Interface','Mac']; break;
+        case 'multicast': headers = ['Switch','Vlan Name','Multicast Interface','Multicast Group Address','Multicast Listener Address']; break;
+        case 'lacp': headers = ['Switch','AE Interface','Receive Status','Interface Name','Transmit Status','Mux State']; break;                
     }
 
     var table_headers = "";
