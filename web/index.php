@@ -35,6 +35,7 @@
                     <li><a href="table.php?task=ethernet">Ethernet</a></li>
                     <li><a href="table.php?task=multicast">Multicast</a></li>
                     <li><a href="table.php?task=lacp">LACP</a></li>
+                    <li><a href="rollback.html">rollback</a></li>
                   </ul>
                 </div>
             </div>
